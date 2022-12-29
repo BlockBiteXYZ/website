@@ -12,7 +12,6 @@ a {
 
 #app {
     margin: auto;
-    width: 50%;
     height: 100vh;
     vertical-align: middle;
     padding: 40vh 0;
@@ -21,15 +20,52 @@ a {
 
 #title {
     font-weight: bold;
-    font-size: 70pt;
 }
 
 #subtitle {
     font-weight: normal;
-    font-size: 20pt;
 }
 
 #contact-us {
     font-weight: normal;
-    font-size: 20pt;
+}
+
+
+@media (min-width: 300px) {
+    #app {
+        width: 80%;
+    }
+
+    #title {
+        font-size: 35pt;
+    }
+
+
+    #subtitle {
+        font-size: 15pt;
+    }
+
+    #contact-us {
+        font-size: 15pt;
+    }
+
+}
+
+@media (min-width: 800px) {
+    #app {
+        width: 50%;
+    }
+
+    #title {
+        font-size: 70pt;
+    }
+    
+    #subtitle {
+        font-size: 20pt;
+    }
+    
+    #contact-us {
+        font-size: 20pt;
+    }
+    
 }
