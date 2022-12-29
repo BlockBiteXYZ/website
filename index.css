@@ -1,0 +1,35 @@
+body {
+    background-color: black;
+    color: rgb(0, 181, 0);
+    overflow: hidden;
+    font-family: monospace;
+}
+
+a {
+    text-decoration: underline;
+    color: rgb(0, 181, 0);
+}
+
+#app {
+    margin: auto;
+    width: 50%;
+    height: 100vh;
+    vertical-align: middle;
+    padding: 40vh 0;
+    overflow: hidden;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 70pt;
+}
+
+#subtitle {
+    font-weight: normal;
+    font-size: 20pt;
+}
+
+#contact-us {
+    font-weight: normal;
+    font-size: 20pt;
+}
