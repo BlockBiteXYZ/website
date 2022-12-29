@@ -22,7 +22,7 @@ const typewriterContactUs = new Typewriter(contactUs, {
 });
 
 typewriterTitle.pauseFor(500).typeString("BB").pauseFor(1500).deleteChars(1).typeString("lockBite").callFunction(() => {
-  typewriterSubtitle.pauseFor(250).typeString("We do blockchain stuff").callFunction(() => {
+  typewriterSubtitle.pauseFor(250).typeString("Audits & Development").callFunction(() => {
     typewriterContactUs.pauseFor(250).typeString('<a href="mailto:contact@blockbite.xyz">Contact us</a>').start()
   }).start();
 }).start();
