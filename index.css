@@ -1,8 +1,13 @@
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     background-color: black;
     color: rgb(0, 181, 0);
     overflow: hidden;
     font-family: monospace;
+    height: -webkit-fill-available;
 }
 
 a {
@@ -14,7 +19,6 @@ a {
     margin: auto;
     height: 100vh;
     vertical-align: middle;
-    padding: 40vh 0;
     overflow: hidden;
 }
 
@@ -30,10 +34,31 @@ a {
     font-weight: normal;
 }
 
+@media (min-width: 0px) {
+    #app {
+        width: 90%;
+        padding: 45vh 0;
+    }
+
+    #title {
+        font-size: 20pt;
+    }
+
+
+    #subtitle {
+        font-size: 12pt;
+    }
+
+    #contact-us {
+        font-size: 12pt;
+    }
+
+}
 
 @media (min-width: 300px) {
     #app {
         width: 80%;
+        padding: 40vh 0;
     }
 
     #title {
@@ -51,21 +76,40 @@ a {
 
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
+    #app {
+        width: 75%;
+        padding: 35vh 0;
+    }
+
+    #title {
+        font-size: 50pt;
+    }
+
+    #subtitle {
+        font-size: 20pt;
+    }
+
+    #contact-us {
+        font-size: 20pt;
+    }
+}
+
+@media (min-width: 1024px) {
     #app {
         width: 50%;
+        padding: 35vh 0;
     }
 
     #title {
         font-size: 70pt;
     }
-    
+
     #subtitle {
         font-size: 20pt;
     }
-    
+
     #contact-us {
         font-size: 20pt;
     }
-    
 }
