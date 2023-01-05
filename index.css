@@ -34,16 +34,14 @@ a {
     font-weight: normal;
 }
 
+#logo {
+    height: 40pt;
+}
+
 @media (min-width: 0px) {
-    #app {
-        width: 90%;
-        padding: 45vh 0;
-    }
-
     #title {
-        font-size: 20pt;
+        font-size: 15pt;
     }
-
 
     #subtitle {
         font-size: 12pt;
@@ -53,11 +51,44 @@ a {
         font-size: 12pt;
     }
 
+    #logo {
+        height: 10pt;
+        padding-right: 3pt;
+    }
+    
+    #app {
+        width: 90%;
+        padding: 45vh 0;
+    }
+}
+
+@media (min-width: 240px) {
+    #app {
+        width: 90%;
+        padding: 45vh 0;
+    }
+
+    #title {
+        font-size: 20pt;
+    }
+
+    #subtitle {
+        font-size: 12pt;
+    }
+
+    #contact-us {
+        font-size: 12pt;
+    }
+
+    #logo {
+        height: 10pt;
+        padding-right: 3pt;
+    }
 }
 
 @media (min-width: 300px) {
     #app {
-        width: 80%;
+        width: 90%;
         padding: 40vh 0;
     }
 
@@ -74,6 +105,10 @@ a {
         font-size: 15pt;
     }
 
+    #logo {
+        height: 20pt;
+        padding-right: 5pt;
+    }
 }
 
 @media (min-width: 700px) {
@@ -93,11 +128,16 @@ a {
     #contact-us {
         font-size: 20pt;
     }
+
+    #logo {
+        height: 30pt;
+        padding-right: 5pt;
+    }
 }
 
 @media (min-width: 1024px) {
     #app {
-        width: 50%;
+        width: 70%;
         padding: 35vh 0;
     }
 
@@ -111,5 +151,10 @@ a {
 
     #contact-us {
         font-size: 20pt;
+    }
+
+    #logo {
+        height: 40pt;
+        padding-right: 5pt;
     }
 }

@@ -21,7 +21,7 @@ const typewriterContactUs = new Typewriter(contactUs, {
   cursor: "",
 });
 
-typewriterTitle.pauseFor(500).typeString("BB").pauseFor(1500).deleteChars(1).typeString("lockBite").callFunction(() => {
+typewriterTitle.pauseFor(500).typeString("BB").pauseFor(1500).deleteChars(2).typeString("<img id='logo' src='logo.png' />BlockBite").callFunction(() => {
   typewriterSubtitle.pauseFor(250).typeString("Audits & Development").callFunction(() => {
     typewriterContactUs.pauseFor(250).typeString('<a href="mailto:contact@blockbite.xyz">Contact us</a>').start()
   }).start();
