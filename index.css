@@ -24,6 +24,7 @@ a {
 
 #title {
     font-weight: bold;
+    font-family: "Xperia";
 }
 
 #subtitle {
@@ -36,6 +37,11 @@ a {
 
 #logo {
     height: 40pt;
+}
+
+@font-face {
+    font-family:"Xperia";
+    src: url("Xperia.ttf") /* TTF file for CSS3 browsers */
 }
 
 @media (min-width: 0px) {
@@ -81,7 +87,7 @@ a {
     }
 
     #logo {
-        height: 10pt;
+        height: 15pt;
         padding-right: 3pt;
     }
 }
@@ -106,7 +112,7 @@ a {
     }
 
     #logo {
-        height: 20pt;
+        height: 25pt;
         padding-right: 5pt;
     }
 }
@@ -130,7 +136,7 @@ a {
     }
 
     #logo {
-        height: 30pt;
+        height: 35pt;
         padding-right: 5pt;
     }
 }
@@ -154,7 +160,7 @@ a {
     }
 
     #logo {
-        height: 40pt;
+        height: 50pt;
         padding-right: 5pt;
     }
 }
