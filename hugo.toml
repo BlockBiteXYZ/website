@@ -1,0 +1,73 @@
+baseURL = 'http://blockbite.ch/'
+languageCode = 'en-us'
+title = 'BlockBite'
+theme = 'hugo-coder'
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+disqusShortname = "yourdiscussshortname"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "Mathias Scherer"
+  info = "Solidity Dev, DevOps Engineer, Security Nerd"
+  description = "BlockBite website. Offering freelance services"
+  keywords = "developer,personal,blockbite"
+  avatarurl = "images/white_text_transparent.png"
+  #gravatar = "john.doe@example.com"
+
+  faviconSVG = "/images/white.svg"
+
+  since = 2023
+
+  enableTwemoji = true
+
+  colorScheme = "dark"
+  hidecolorschemetoggle = true
+
+  customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/mathewmeconry/"
+[[params.social]]
+  name = "Telegram"
+  icon = "fa fa-telegram fa-2x"
+  weight = 2
+  url = "https://t.me/mathewmeconry/"
+[[params.social]]
+  name = "Twitter"
+  icon = "fa fa-twitter fa-2x"
+  weight = 3
+  url = "https://twitter.com/mathewmeconry/"
+[[params.social]]
+  name = "LinkedIn"
+  icon = "fa fa-linkedin fa-2x"
+  weight = 3
+  url = "https://www.linkedin.com/in/mathias-scherer-4a15b5114/"
+
+# Menu links
+[[menu.main]]
+  name = "Services"
+  weight = 1
+  url = "services/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
