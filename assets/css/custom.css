@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "Xperia";
+    src: url("../fonts/Xperia.ttf") /* TTF file for CSS3 browsers */
+}
+
 .avatar img {
     border-radius: 0;
 }
 
 body {
     font-family: monospace;
+}
+
+.navigation-title {
+    font-family: "Xperia" !important;
 }
