@@ -14,3 +14,16 @@ body {
 .navigation-title {
     font-family: "Xperia" !important;
 }
+
+.partners {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%;
+}
+
+.partners .partner {
+    width: 25rem;
+    align-self: center;
+}
