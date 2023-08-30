@@ -6,7 +6,7 @@ draft: false
 
 ### Solidity Development
 
-Unlock the potential of blockchain technology with my expert Solidity development services. Whether you're launching a DApp or need smart contracts, I can turn your vision into reality on the Ethereum blockchain.
+Unlock the potential of blockchain technology with my expert Solidity development services. Whether you're launching a DApp or need smart contracts, I can turn your vision into reality on any EVM compatible chain.
 
 ### Typescript Development (Backend)
 
