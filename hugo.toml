@@ -17,7 +17,6 @@ disqusShortname = "yourdiscussshortname"
 style = "github-dark"
 
 [params]
-  author = "Mathias Scherer"
   info = "Solidity Dev, DevOps Engineer, Security Nerd"
   description = "BlockBite - Experienced freelancer in Solidity, Typescript, DevOps, and security, offering tailored solutions for blockchain and backend projects, and open to unique challenges beyond, with easy contact via email and social media."
   keywords = "EVM, Freelance Solidity Developer, Typescript Development Services, Blockchain Smart Contracts, Security Audits for Blockchain, DevOps Engineer, Ethereum Blockchain Development, Backend Development Solutions, Custom Software Development, IT Freelancer, Web Application Security, Freelance IT Consultant, Solidity Smart Contracts, Typescript Backend Development, Blockchain Project Consulting, Cybersecurity Expertise, IT Solutions Provider, Freelance DevOps Specialist, Ethereum DApp Development, Code Quality Assurance"
@@ -37,6 +36,9 @@ style = "github-dark"
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
 
+[params.author]
+  name = "Mathias Scherer"
+  email = "mathias@blockbite.ch"
 
 [taxonomies]
   category = "categories"
@@ -45,22 +47,22 @@ style = "github-dark"
   author = "authors"
 
 # Social links
-[[params.social]]
+[[params.socials]]
   name = "Github"
   icon = "fa fa-github fa-2x"
   weight = 1
   url = "https://github.com/mathewmeconry/"
-[[params.social]]
+[[params.socials]]
   name = "Telegram"
   icon = "fa fa-telegram fa-2x"
   weight = 2
   url = "https://t.me/mathewmeconry/"
-[[params.social]]
+[[params.socials]]
   name = "Twitter"
   icon = "fa fa-twitter fa-2x"
   weight = 3
   url = "https://twitter.com/mathewmeconry/"
-[[params.social]]
+[[params.socials]]
   name = "LinkedIn"
   icon = "fa fa-linkedin fa-2x"
   weight = 3
@@ -76,6 +78,10 @@ style = "github-dark"
   weight = 2
   url = "partners/"
 [[menu.main]]
-  name = "About"
+  name = "Audits"
   weight = 3
+  url = "audits/"
+[[menu.main]]
+  name = "About"
+  weight = 4
   url = "about/"
