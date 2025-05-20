@@ -15,7 +15,7 @@ body {
   font-family: "Xperia" !important;
 }
 
-.partners {
+.customers {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -25,26 +25,30 @@ body {
   width: 100%;
 }
 
-.partners .partner {
+.customers .customer {
   width: 25rem;
   align-self: center;
   height: 10rem;
   margin-top: 2rem;
 }
 
-.partners .partner a {
+.customers .customer a {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100%;
 }
 
+.customer img {
+  object-fit: contain;
+}
+
 @media only screen and (max-width: 600px) {
-  .partners .partner {
+  .customers .customer {
     margin-top: 1rem;
   }
 
-  .partners .partner a {
+  .customers .customer a {
     display: flex;
     justify-content: start;
   }

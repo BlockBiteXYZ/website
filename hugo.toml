@@ -5,8 +5,6 @@ theme = 'hugo-coder'
 languagecode = "en"
 defaultcontentlanguage = "en"
 
-paginate = 20
-
 disqusShortname = "yourdiscussshortname"
 
 [services]
@@ -71,9 +69,9 @@ style = "github-dark"
   weight = 1
   url = "services/"
 [[menu.main]]
-  name = "Partners"
+  name = "Customers"
   weight = 2
-  url = "partners/"
+  url = "customers/"
 [[menu.main]]
   name = "Audits"
   weight = 3
