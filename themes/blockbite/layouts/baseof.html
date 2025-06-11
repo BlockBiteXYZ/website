@@ -2,6 +2,7 @@
 <html lang="{{ .Site.Language.Lang }}">
   <head>
     {{ partialCached "meta-tags.html" . }}
+    {{ partialCached "icons.html" . }}
     {{ partialCached "css.html" . }}
     {{ partialCached "js.html" . }}
     {{ partialCached "google-analytics/index" . .Params.analyze }}
@@ -12,10 +13,11 @@
 {{ end }}
   </head>
   <body
-    class="bg-white dark:bg-black self-center h-screen min-h-screen max-w-7xl mx-auto p-5 md:p-10 lg:p-20 text-black dark:text-white">
-      <header>{{ partial "header.html" . }}</header>
-      <main class="pt-10 md:pt-20 min-h-9/10 w-full flex">{{ block "content" . }}{{ end }}</main>
-      <footer class="pt-10 pb-10 text-center w-full text-black/40 dark:text-white/40">{{ partial "footer.html" . }}</footer>
+    class="bg-white dark:bg-black self-center h-screen min-h-screen max-w-7xl mx-auto p-5 lg:pl-20 lg:pr-20 pt-5 md:pt-10 lg:pt-20 text-black dark:text-white">
+    <div class="flex flex-col h-full">
+      <header class="flex-none">{{ partial "header.html" . }}</header>
+      <main class="grow pt-10 md:pt-20 w-full flex">{{ block "content" . }}{{ end }}</main>
+      <footer class="flex-none pt-5 md:pt-10 pb-2 text-center w-full text-black/40 dark:text-white/40">{{ partial "footer.html" . }}</footer>
     </div>
   </body>
 </html>
