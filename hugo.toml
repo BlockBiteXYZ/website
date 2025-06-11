@@ -22,8 +22,6 @@ style = "github-dark"
   avatarurl = "images/white_text_transparent.png"
   #gravatar = "john.doe@example.com"
 
-  faviconSVG = "/images/white.svg"
-
   since = 2023
 
   logo = "images/black_text_wide.svg"
