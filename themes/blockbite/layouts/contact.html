@@ -1,0 +1,13 @@
+{{ define "content" }}
+<article class="w-full">
+  <header class="w-full">
+    <h1 class="w-full text-4xl font-normal text-center">{{ .Title }}</h1>
+  </header>
+
+  <div class="flex flex-col w-full h-9/10 gap-8
+">
+    <section class="text-center text-lg pt-10">{{ .Content }}</section>
+    <p class="text-center">{{ partialCached "socials-full.html" . }}</p>
+  </div>
+</article>
+{{ end }}

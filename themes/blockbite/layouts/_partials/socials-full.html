@@ -1,0 +1,60 @@
+{{ with .Site.Params.social }}
+<ul class="flex flex-row gap-2 w-full justify-between">
+  {{ range sort . "weight" }} {{ if .icon }}
+  <li>
+    <a
+      href="{{ .url | safeURL }}"
+      target="_blank"
+      aria-label="{{ .name }}"
+      {{
+      if
+      .rel
+      }}rel="{{ .rel }}"
+      {{
+      end
+      }}
+      {{
+      if
+      .target
+      }}target="{{ .target }}"
+      {{
+      end
+      }}
+      {{
+      if
+      .type
+      }}type="{{ .type }}"
+      {{
+      end
+      }}
+    >
+      {{ $ctx := dict "vendor" .vendor "name" .icon "size" "3em" "className" "mx-auto"  }} {{
+      partial "icons/icon" $ctx }}
+      {{ .text }}
+    </a>
+  </li>
+  {{ else }}
+  <li>
+    <a
+      href="{{ .url | safeURL }}"
+      aria-label="{{ .name }}"
+      {{
+      if
+      .rel
+      }}rel="{{ .rel }}"
+      {{
+      end
+      }}
+      {{
+      if
+      .target
+      }}target="{{ .target }}"
+      {{
+      end
+      }}
+      >{{ .name }}: {{ .text }}</a
+    >
+  </li>
+  {{ end }} {{ end }}
+</ul>
+{{ end }}

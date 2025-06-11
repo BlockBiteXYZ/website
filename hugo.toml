@@ -1,7 +1,7 @@
 baseURL = 'http://blockbite.ch/'
 languageCode = 'en-us'
 title = 'BlockBite'
-theme = 'hugo-coder'
+theme = 'blockbite'
 languagecode = "en"
 defaultcontentlanguage = "en"
 
@@ -31,6 +31,9 @@ style = "github-dark"
   colorScheme = "dark"
   hidecolorschemetoggle = true
 
+  logo = "images/black_text_wide.svg"
+  punchLines = ["You Ask, I Build", "Code That Just Works", "Fast. Clean. Done.", "No BS. Just Code."]
+
   customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
   # customJS = ["js/custom.js"]
@@ -44,39 +47,78 @@ style = "github-dark"
 # Social links
 [[params.social]]
   name = "Github"
-  icon = "fa fa-github fa-2x"
+  vendor = "font-awesome-brands"
+  icon = "github"
   weight = 1
   url = "https://github.com/mathewmeconry/"
+  text = "mathewmeconry"
 [[params.social]]
   name = "Telegram"
-  icon = "fa fa-telegram fa-2x"
+  vendor = "font-awesome-brands"
+  icon = "telegram"
   weight = 2
   url = "https://t.me/mathewmeconry/"
+  text = "@mathewmeconry"
 [[params.social]]
   name = "Twitter"
-  icon = "fa fa-twitter fa-2x"
+  vendor = "font-awesome-brands"
+  icon = "twitter"
   weight = 3
   url = "https://twitter.com/mathewmeconry/"
+  text = "@mathewmeconry"
 [[params.social]]
   name = "LinkedIn"
-  icon = "fa fa-linkedin fa-2x"
+  vendor = "font-awesome-brands"
+  icon = "linkedin"
   weight = 3
   url = "https://www.linkedin.com/in/mathias-scherer-4a15b5114/"
+  text = "Mathias Scherer"
+[[params.social]]
+  name = "E-Mail"
+  vendor = "font-awesome-solid"
+  icon = "envelope"
+  weight = 3
+  url = "mailto:mathias@blockbite.ch"
+  text = "mathias@blockbite.ch"
 
 # Menu links
-[[menu.main]]
+[[menus.main]]
   name = "Services"
   weight = 1
-  url = "services/"
-[[menu.main]]
+  url = "/services/"
+[[menus.main]]
   name = "Customers"
   weight = 2
-  url = "customers/"
-[[menu.main]]
-  name = "Audits"
-  weight = 3
-  url = "audits/"
-[[menu.main]]
+  url = "/customers/"
+[[menus.main]]
   name = "About"
+  weight = 3
+  url = "/about/"
+[[menus.main]]
+  name = "Get In Touch"
   weight = 4
-  url = "about/"
+  url = "/contact/"
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+  [[module.imports]]
+    path = 'github.com/hugomods/icons/vendors/lucide'
+  [[module.imports]]
+    path = 'github.com/hugomods/icons/vendors/font-awesome'
+  [[module.imports]]
+    path = 'github.com/hugomods/google-analytics'

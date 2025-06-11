@@ -1,6 +1,5 @@
 ---
 title: "About Me"
-date: 2023-08-29T11:35:05+02:00
 draft: false
 ---
 
@@ -20,11 +19,6 @@ Here's a snapshot of my skills and experience:
 
 I'm dedicated to delivering top-notch solutions that align with your business needs. If you're looking for a professional who can bring your projects to life while prioritizing security and efficiency, you've come to the right place.
 
-Feel free to [contact me](mailto:mathias@blockbite.ch) for inquiries or project opportunities. You can also connect with me on social media for updates and insights:
-
-- Twitter: [@mathewmeconry](https://twitter.com/mathewmeconry)
-- LinkedIn: [Mathias Scherer](https://www.linkedin.com/in/mathias-scherer-4a15b5114/)
-- GitHub: [Mathewmeconry](https://github.com/mathewmeconry)
-- Telegram: [Mathewmeconry](https://t.me/mathewmeconry)
-
-Let's collaborate and turn your ideas into reality!
+#
+#
+#### Ready to collaborate? [Get in Touch](/contact)

@@ -1,0 +1,83 @@
+<script>
+  function toggleTheme() {
+    localStorage.theme === "dark"
+      ? (localStorage.theme = "light")
+      : (localStorage.theme = "dark");
+    document.documentElement.classList.toggle("dark");
+  }
+
+  function toggleMenu() {
+    document.getElementById("slide-menu").classList.toggle("left-full")
+    document.getElementById("slide-menu").classList.toggle("left-0")
+  }
+</script>
+<nav class="grid grid-cols-2">
+  <a
+    class="w-50 lg:w-70 object-scale-down place-items-center cursor-pointer content-center"
+    href="{{ .Site.BaseURL }}"
+  >
+    <img
+      class="dark:invert"
+      src="{{ .Site.Params.logo | relURL }}"
+      alt="logo"
+    />
+  </a>
+  {{ with site.Menus.main }}
+  <div
+    class="flex flex-row justify-evenly grow text-md lg:text-xl place-items-center hidden md:flex"
+  >
+    {{ range . }}
+    <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}">
+      {{ .Name }}</a
+    >
+    / {{ end }}
+    <a class="cursor-pointer" onclick="toggleTheme()">
+      <p class="hidden dark:block">
+        {{ $ctx := dict "vendor" "lucide" "name" "sun" }} {{ partial
+        "icons/icon" $ctx }}
+      </p>
+      <p class="dark:hidden">
+        {{ $ctx := dict "vendor" "lucide" "name" "moon" }} {{ partial
+        "icons/icon" $ctx }}
+      </p>
+    </a>
+  </div>
+  <div class="md:hidden justify-self-end" onclick="toggleMenu()">
+    {{ $ctx := dict "vendor" "lucide" "name" "menu" "size" "2em" "className"
+    "cursor-pointer" }} {{ partial "icons/icon" $ctx }}
+  </div>
+  <div
+    id="slide-menu"
+    class="z-40 fixed top-0 left-full w-screen h-screen transition-[left] bg-white dark:bg-black p-10 grid grid-row content-start place-items-center gap-4 text-black dark:text-white"
+  >
+    <div class="w-full grid grid-flow-col">
+      <a class="cursor-pointer" onclick="toggleTheme()">
+        <p class="hidden dark:block">
+          {{ $ctx := dict "vendor" "lucide" "name" "sun" "size" "2em"}} {{
+          partial "icons/icon" $ctx }}
+        </p>
+        <p class="dark:hidden">
+          {{ $ctx := dict "vendor" "lucide" "name" "moon" "size" "2em"}} {{
+          partial "icons/icon" $ctx }}
+        </p>
+      </a>
+      <a class="self-end" onclick="toggleMenu()">
+        {{ $ctx := dict "vendor" "lucide" "name" "x" "size" "2em" "className"
+        "cursor-pointer place-self-end" }} {{ partial "icons/icon" $ctx }}
+      </a>
+    </div>
+    <h4 class="pt-0">
+      <a class="hover:underline no-underline cursor-pointer" href="{{ $.Site.BaseURL }}">
+        Home</a
+      >
+    </h4>
+    {{ range . }}
+    <h4 class="pt-0">
+      <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}">
+        {{ .Name }}</a
+      >
+    </h4>
+    {{ end }}
+  </div>
+  {{ end }}
+</nav>
