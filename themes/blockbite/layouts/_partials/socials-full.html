@@ -1,7 +1,7 @@
 {{ with .Site.Params.social }}
-<ul class="flex flex-row gap-2 w-full justify-between">
+<ul class="flex flex-row flex-wrap gap-4 w-full justify-center">
   {{ range sort . "weight" }} {{ if .icon }}
-  <li>
+  <li class="grow text-center">
     <a
       href="{{ .url | safeURL }}"
       target="_blank"

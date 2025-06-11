@@ -32,7 +32,7 @@ style = "github-dark"
   hidecolorschemetoggle = true
 
   logo = "images/black_text_wide.svg"
-  punchLines = ["You Ask, I Build", "Code That Just Works", "Fast. Clean. Done.", "No BS. Just Code."]
+  punchLines = ["You Ask, I Build", "Code That Works", "Fast. Clean. Done.", "No BS. Just Code."]
 
   customCSS = ["css/custom.css"]
   # customSCSS = ["scss/custom.scss"]
