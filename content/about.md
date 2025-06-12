@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 draft: false
+layout: 'single'
 ---
 
 Hello! I'm Mathias, a seasoned professional with over a decade of experience in the world of IT. I specialize in three key areas:

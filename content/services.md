@@ -1,6 +1,7 @@
 ---
 title: "Services"
 draft: false
+layout: 'single'
 ---
 
 ### Solidity Development

@@ -15,7 +15,7 @@
     {{ end }}
   </head>
   <body
-    class="bg-white dark:bg-black self-center h-screen min-h-screen max-w-7xl mx-auto p-5 lg:pl-20 lg:pr-20 pt-5 md:pt-10 lg:pt-20 text-black dark:text-white"
+    class="{{ if eq .Kind "home" -}} hero-background {{ end -}} bg-white dark:bg-black self-center h-screen min-h-screen max-w-7xl mx-auto p-5 lg:pl-20 lg:pr-20 pt-5 md:pt-10 lg:pt-20 text-black dark:text-white"
   >
     <div class="flex flex-col h-full">
       <header class="flex-none">{{ partial "header.html" . }}</header>
