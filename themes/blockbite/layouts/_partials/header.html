@@ -11,7 +11,7 @@
     document.getElementById("slide-menu").classList.toggle("left-0")
   }
 </script>
-<nav class="grid grid-cols-2">
+<nav class="grid grid-cols-3">
   <a
     class="w-50 lg:w-70 object-scale-down place-items-center cursor-pointer content-center"
     href="{{ .Site.BaseURL }}"
@@ -24,7 +24,7 @@
   </a>
   {{ with site.Menus.main }}
   <div
-    class="flex flex-row justify-evenly grow text-md lg:text-xl place-items-center hidden md:flex"
+    class="flex flex-row justify-evenly grow text-md lg:text-xl place-items-center hidden sm:flex col-span-2"
   >
     {{ range . }}
     <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}">
@@ -42,7 +42,7 @@
       </p>
     </a>
   </div>
-  <div class="md:hidden justify-self-end" onclick="toggleMenu()">
+  <div class="sm:hidden justify-self-end col-span-2" onclick="toggleMenu()">
     {{ $ctx := dict "vendor" "lucide" "name" "menu" "size" "2em" "className"
     "cursor-pointer" }} {{ partial "icons/icon" $ctx }}
   </div>
