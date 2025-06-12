@@ -2,6 +2,7 @@
 <article class="w-full">
   <header class="w-full">
     <h1 class="w-full text-4xl font-normal text-center">{{ .Title }}</h1>
+    {{ if .Description }}<h6 class="pt-0 text-neutral-500 text-center text-base md:text-xl">{{ .Description }}</h6>{{ end }}
   </header>
 
   <section class="pt-10">{{ .Content }}</section>
