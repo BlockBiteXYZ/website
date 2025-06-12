@@ -24,7 +24,7 @@ style = "github-dark"
 
   since = 2023
 
-  logo = "images/black_text_wide.svg"
+  logo = "images/black_text_wide_transparent.png"
   punchLines = ["You Ask, I Build", "Code That Works", "Fast. Clean. Done.", "No BS. Just Code."]
 
   customCSS = ["css/custom.css"]
