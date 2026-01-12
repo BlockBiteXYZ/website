@@ -74,7 +74,7 @@ style = "github-dark"
   weight = 1
   url = "/services/"
 [[menus.main]]
-  name = "Customers"
+  name = "Customers & Partners"
   weight = 2
   url = "/customers/"
 [[menus.main]]
