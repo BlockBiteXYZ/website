@@ -29,6 +29,9 @@ I take software security seriously. Whether it’s smart contract audits or desi
 
 ##
 ### 🚀 Selected Projects
+**[nexcite.ai](https://nexcite.ai)**
+Nexcite is an AI-powered research tool that lets you upload documents or search the web and get answers with every claim traced back to its exact source — no more hunting through papers to verify a citation. Built for researchers, PhD students and academics who need precision, not hallucinations. EU-hosted, currently in free beta.
+
 **[Frankencoin CCIP Integration](https://github.com/Frankencoin-ZCHF/FrankenCoin)**  
 Brought the Swiss Franc–backed stablecoin (ZCHF) to multiple chains with Chainlink CCIP integration.
 
