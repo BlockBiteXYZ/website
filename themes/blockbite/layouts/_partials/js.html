@@ -7,3 +7,7 @@
         window.matchMedia("(prefers-color-scheme: dark)").matches)
   );
 </script>
+
+{{ if .Site.Params.umamiID }}
+<script defer src="https://analytics.blockbite.ch/script.js" data-website-id="{{ .Site.Params.umamiID }}"></script>
+{{ end }}
