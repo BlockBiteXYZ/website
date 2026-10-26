@@ -2,41 +2,35 @@
 title: "Services"
 description: "Built like a Swiss watch. Coded for the modern stack."
 draft: false
-layout: 'single'
+layout: 'redirect'
+sitemap:
+  disable: true
 ---
-### 🛠️ What I Can Help You With
+### What I Can Help You With {icon="wrench"}
 Code that runs, scales, and holds up under pressure.  
-I work with teams that care about shipping real products — fast, clean, and secure. Whether you're building something from scratch or need help scaling an existing project, here’s what I bring to the table:
+I work with teams that ship real products and want them fast, clean, and secure — whether you're starting from scratch or scaling something that already exists.
 
-##
-### 💡 Smart Contract Development (Solidity)
-Building on Ethereum or any SVM/EVM-compatible chain?  
-I write production-grade smart contracts — clean, tested, and secure. From tokens to custom protocols, I help turn blockchain ideas into working code.
+### Smart Contract Development (Solidity) {icon="file-code"}
+Production-grade smart contracts for Ethereum and any EVM-compatible chain — clean, tested, and secure.  
+From tokens to custom protocols and cross-chain integrations, I turn blockchain ideas into working code.
 
-##
-### ⚙️ Backend Engineering (TypeScript)
-Need a rock-solid backend for your app?  
-I build maintainable, high-performance APIs, background jobs, and integrations — all powered by TypeScript and shaped around your product’s needs.
+### Security Reviews & Audits {icon="shield-check"}
+Targeted security reviews for EVM smart contracts, focused on logic flaws, reentrancy, and edge-case exploits.  
+In my [Frankencoin audit](/audits/Frankencoin.pdf) I uncovered critical minting and challenge vulnerabilities and worked with the team to fix them.
 
-##
-### 🧠 Applied AI & Automation
-Want to integrate AI into your product or workflow?  
-I help teams use large language models (LLMs) in practical, focused ways — from retrieval-based chatbots to internal tools that actually save time. Whether it’s OpenAI, open-source models, or something custom, I can help you ship fast and smart.
+Prepping for mainnet or want a second pair of eyes on a release? I'll help you ship with confidence.
 
-##
-### 🔐 Security Reviews & Audits
-Security isn’t just a service — it’s how I think.  
-Every line of code I write is shaped by years of experience spotting vulnerabilities and thinking like an attacker. While I don’t audit everything, I do offer targeted security reviews for EVM smart contracts — with a deep focus on logic flaws, reentrancy, and edge-case exploits.
+### Backend Engineering (TypeScript) {icon="server"}
+Maintainable, high-performance APIs, background jobs, and integrations — built in TypeScript and shaped around your product.
 
-Whether you’re prepping for mainnet or want a second set of eyes before launch, I’ll help you ship with confidence.
+### Applied AI & Automation {icon="sparkles"}
+LLM features that save real time, not demos.  
+From retrieval-based (RAG) assistants over your internal docs to custom tooling — with OpenAI, open-source models, or something custom.
 
-##
-### 🎯 Custom Work? Let’s Talk.
-Got something outside the box?  
-I’m open to new ideas and weird problems — whether it's AI tooling, automation scripts, or internal systems. If it’s technically interesting, I’m all ears.
+### Something Else? {icon="lightbulb"}
+I like new ideas and weird problems — AI tooling, automation, internal systems. If it's technically interesting, I'm all ears.
 
-##
-### 🙌 Why Work With Me?
+### Why Work With Me? {icon="badge-check"}
 **Battle-tested**: 10+ years building software that ships
 
 **Deep stack**: Solidity, TypeScript, AI, cloud infra, and security
@@ -46,6 +40,5 @@ I’m open to new ideas and weird problems — whether it's AI tooling, automati
 **Flexible**: I adapt to your stack, team, and workflow
 
 **Straightforward**: Clear scope, direct communication, zero fluff
-#
-#
-#### Ready to collaborate? [Get in Touch](/contact)
+
+#### Ready to collaborate? [Get in touch](/#contact)

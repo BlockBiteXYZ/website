@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="{{ .Site.Language.Lang }}" class="motion-safe:scroll-smooth">
   <head>
     <title>
-      {{ block "title" . }}{{ .Site.Params.HeadTitle | default .Site.Title }}{{
+      {{ block "title" . }}{{ if .IsHome }}{{ .Site.Params.HeadTitle | default .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}{{
       end }}
     </title>
-    {{ partialCached "meta-tags.html" . }} {{ partialCached "icons.html" . }} {{
+    {{ partial "meta-tags.html" . }} {{ partialCached "icons.html" . }} {{
     partialCached "css.html" . }} {{ partialCached "js.html" . }} {{ if
     .Params.canonicalUrl }}
     <link rel="canonical" href="{{ .Params.canonicalUrl }}" />
     {{ else }}
     <link rel="canonical" href="{{ .Permalink }}" />
     {{ end }}
+    <link rel="preload" href="{{ "fonts/inter/inter-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+    {{ if .IsHome }}{{ partialCached "schema.html" . }}{{ end }}
   </head>
   <body
-    class="{{ if eq .Kind "home" -}} hero-background {{ end -}} bg-white dark:bg-black self-center h-svh min-h-svh max-w-7xl mx-auto p-5 lg:pl-20 lg:pr-20 pt-5 md:pt-10 lg:pt-20 text-black dark:text-white"
+    class="{{ if eq .Kind "home" -}} hero-background {{ end -}} bg-white dark:bg-black self-center min-h-svh flex flex-col max-w-7xl mx-auto px-5 lg:pl-20 lg:pr-20 pb-5 text-black dark:text-white"
   >
-    <div class="flex flex-col h-full">
-      <header class="flex-none">{{ partial "header.html" . }}</header>
+    <div class="flex flex-col grow">
+      <header id="site-header" class="site-header flex-none sticky top-0 z-30 pt-5 md:pt-10 pb-4">{{ partial "header.html" . }}</header>
       <main class="grow pt-10 md:pt-20 w-full flex">
         {{ block "content" . }}{{ end }}
       </main>

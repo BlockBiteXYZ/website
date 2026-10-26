@@ -1,0 +1,14 @@
+{{ define "title" }}Page not found | {{ .Site.Title }}{{ end }}
+{{ define "content" }}
+<article class="w-full flex flex-col items-center justify-center gap-6 min-h-[60svh] text-center">
+  <p class="pt-0 font-bold text-6xl md:text-8xl">404</p>
+  <h1 class="pt-0 font-normal">This page doesn't exist (anymore).</h1>
+  <p class="pt-0 text-neutral-500">Everything now lives on a single page.</p>
+  <a
+    href="{{ "/" | relURL }}"
+    class="no-underline font-medium px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
+  >
+    Back to the homepage
+  </a>
+</article>
+{{ end }}

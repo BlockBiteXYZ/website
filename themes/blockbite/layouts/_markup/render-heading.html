@@ -1,7 +1,5 @@
+{{- /* Optional Lucide icon via a heading attribute: ### Title {icon="shield-check"} */ -}}
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{- with .Attributes.icon }}{{ partial "icons/icon" (dict "vendor" "lucide" "name" . "className" "heading-icon") }}{{ end }}
   {{ .Text | safeHTML }}
-  <a class="heading-link" href="#{{ .Anchor | safeURL }}">
-    <i class="fa-solid fa-link" aria-hidden="true" title="{{ i18n "link_to_heading" | default "Link to heading" }}"></i>
-    <span class="sr-only">{{ i18n "link_to_heading" | default "Link to heading" }}</span>
-  </a>
 </h{{ .Level }}>

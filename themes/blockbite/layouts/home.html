@@ -1,19 +1,88 @@
 {{ define "content" }}
-<div
-  class="font-bold text-4xl md:text-6xl lg:text-8xl [text-wrap:balance] bg-clip-text flex flex-col grow justify-center items-center gap-8 min-h-full"
->
-  <span
-    class="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] overflow-hidden"
+{{- $email := "" -}}
+{{- range site.Params.social -}}
+  {{- if hasPrefix .url "mailto:" }}{{ $email = strings.TrimPrefix "mailto:" .url }}{{ end -}}
+{{- end -}}
+<div class="w-full">
+  <section
+    class="flex flex-col justify-center items-center gap-6 md:gap-8 min-h-[70svh] [text-wrap:balance]"
   >
-    <ul
-      class="block animate-text-slide-{{ len .Site.Params.punchLines }} text-center leading-tight [&_li]:block"
-    >
-      {{ range $k, $v := .Site.Params.punchLines }}
-      <li>{{ $v }}</li>
+    {{ with .Site.Params.headline }}
+    <p class="pt-0 text-center font-bold leading-tight text-4xl md:text-6xl lg:text-8xl">{{ . }}</p>
+    {{ end }}
+    {{ with .Site.Params.tagline }}
+    <h1 class="max-w-3xl pt-0 text-center font-normal text-lg md:text-2xl text-neutral-600 dark:text-neutral-400">
+      {{ . }}
+    </h1>
+    {{ end }}
+    {{ with .Site.Params.facts }}
+    <ul class="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base text-neutral-500">
+      {{ range $i, $fact := . }}
+      {{ if $i }}<li aria-hidden="true" class="hidden sm:block">·</li>{{ end }}
+      <li>{{ $fact }}</li>
       {{ end }}
-      <li aria-hidden="true">{{ index .Site.Params.punchLines 0 }}</li>
     </ul>
-  </span>
-  {{ partialCached "socials-minimal.html" . }}
+    {{ end }}
+    <div class="flex flex-wrap justify-center gap-4 font-medium text-base md:text-xl">
+      <a
+        href="#contact"
+        data-umami-event="cta-hero-contact"
+        class="no-underline px-6 py-3 rounded-full border border-current bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
+      >
+        Get in touch
+      </a>
+      <a
+        href="#services"
+        data-umami-event="cta-hero-services"
+        class="no-underline px-6 py-3 rounded-full border border-current hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+      >
+        See what I do
+      </a>
+    </div>
+    {{ partialCached "socials-minimal.html" . }}
+  </section>
+
+  {{ range slice "customers" "services" "process" "about" "contact" }}
+  {{ $id := . }}
+  {{ with site.GetPage . }}
+  <article id="{{ $id }}" class="w-full scroll-mt-28 pt-24 md:pt-32">
+    <header class="w-full">
+      <h2 class="w-full pt-0 text-4xl font-normal text-center">{{ .Title }}</h2>
+      {{ with .Description }}<p class="pt-0 text-neutral-500 text-center text-base md:text-xl">{{ . }}</p>{{ end }}
+    </header>
+    {{ if eq $id "contact" }}
+    <section class="pt-10 text-center text-lg max-w-2xl mx-auto">{{ .Content }}</section>
+    {{ with $email }}
+    <div class="pt-8 flex flex-col items-center gap-3">
+      <a
+        href="mailto:{{ . }}"
+        data-umami-event="cta-contact-email"
+        class="no-underline px-8 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium text-lg md:text-2xl hover:opacity-80 transition-opacity"
+      >
+        {{ . }}
+      </a>
+      {{ with site.Params.replyTime }}<p class="pt-0 text-sm text-neutral-500">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+    <div class="pt-12">{{ partialCached "socials-full.html" . }}</div>
+    {{ else if eq $id "process" }}
+    <ol class="pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {{ range $i, $step := .Params.steps }}
+      <li class="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 p-6">
+        <div class="flex items-center gap-3 text-neutral-500">
+          {{ partial "icons/icon" (dict "vendor" "lucide" "name" $step.icon "size" "1.5em") }}
+          <span class="text-sm font-medium">Step {{ add $i 1 }}</span>
+        </div>
+        <h3 class="pt-4 text-xl">{{ $step.title }}</h3>
+        <p class="pt-2 text-neutral-600 dark:text-neutral-400">{{ $step.text }}</p>
+      </li>
+      {{ end }}
+    </ol>
+    {{ else }}
+    <section class="pt-10">{{ .Content }}</section>
+    {{ end }}
+  </article>
+  {{ end }}
+  {{ end }}
 </div>
 {{ end }}

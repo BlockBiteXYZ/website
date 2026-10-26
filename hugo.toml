@@ -1,11 +1,11 @@
-baseURL = 'http://blockbite.ch/'
+baseURL = 'https://www.blockbite.ch/'
 languageCode = 'en-us'
 title = 'BlockBite'
 theme = 'blockbite'
 languagecode = "en"
 defaultcontentlanguage = "en"
-
-disqusShortname = "yourdiscussshortname"
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
 
 [markup.highlight]
 style = "github-dark"
@@ -13,15 +13,21 @@ style = "github-dark"
 [params]
   author = "Mathias Scherer"
   info = "Solidity Dev, DevOps Engineer, Security Nerd"
-  description = "BlockBite - Experienced freelancer in Solidity, Typescript, DevOps, and security, offering tailored solutions for blockchain and backend projects, and open to unique challenges beyond, with easy contact via email and social media."
+  HeadTitle = "BlockBite | Smart Contract & Security Engineer, Switzerland"
+  description = "Swiss freelance engineer for Solidity smart contracts, EVM security reviews, TypeScript backends and applied AI. Trusted by Aragon, Frankencoin and TX Group."
   keywords = "EVM, Freelance Solidity Developer, Typescript Development Services, Blockchain Smart Contracts, Security Audits for Blockchain, DevOps Engineer, Ethereum Blockchain Development, Backend Development Solutions, Custom Software Development, IT Freelancer, Web Application Security, Freelance IT Consultant, Solidity Smart Contracts, Typescript Backend Development, Blockchain Project Consulting, Cybersecurity Expertise, IT Solutions Provider, Freelance DevOps Specialist, Ethereum DApp Development, Code Quality Assurance"
-  avatarurl = "images/white_text_transparent.png"
   #gravatar = "john.doe@example.com"
 
   since = 2023
 
   logo = "images/black_text_wide_transparent.png"
-  punchLines = ["You Ask, I Build", "Code That Works", "Fast. Clean. Done.", "No BS. Just Code."]
+  # Share image for LinkedIn, X, Telegram etc. (1200x630)
+  images = ["images/og.png"]
+
+  headline = "Secure software. Swiss-made."
+  tagline = "Freelance engineer for smart contracts, security reviews, TypeScript backends and applied AI."
+  facts = ["10+ years shipping software", "Smart contract auditor", "Based in Switzerland"]
+  replyTime = "I usually reply within one business day."
 
   customCSS = ["css/custom.css"]
   umamiID = "0781cc07-8b16-4f2c-801f-05218dc2fa69"
@@ -44,11 +50,11 @@ style = "github-dark"
   url = "https://t.me/mathewmeconry/"
   text = "@mathewmeconry"
 [[params.social]]
-  name = "Twitter"
+  name = "X"
   vendor = "font-awesome-brands"
-  icon = "twitter"
+  icon = "x-twitter"
   weight = 3
-  url = "https://twitter.com/mathewmeconry/"
+  url = "https://x.com/mathewmeconry"
   text = "@mathewmeconry"
 [[params.social]]
   name = "LinkedIn"
@@ -67,21 +73,21 @@ style = "github-dark"
 
 # Menu links
 [[menus.main]]
-  name = "Services"
-  weight = 1
-  url = "/services/"
-[[menus.main]]
   name = "Customers & Partners"
+  weight = 1
+  url = "/#customers"
+[[menus.main]]
+  name = "Services"
   weight = 2
-  url = "/customers/"
+  url = "/#services"
 [[menus.main]]
   name = "About Me"
   weight = 3
-  url = "/about/"
+  url = "/#about"
 [[menus.main]]
   name = "Get In Touch"
   weight = 4
-  url = "/contact/"
+  url = "/#contact"
 
 [build]
   [build.buildStats]
@@ -97,6 +103,16 @@ style = "github-dark"
     source = 'assets'
     target = 'assets'
   [[module.mounts]]
+    source = 'static'
+    target = 'static'
+  # Self-hosted Inter (no requests to Google Fonts)
+  [[module.mounts]]
+    source = 'node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2'
+    target = 'static/fonts/inter/inter-latin-wght-normal.woff2'
+  [[module.mounts]]
+    source = 'node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2'
+    target = 'static/fonts/inter/inter-latin-ext-wght-normal.woff2'
+  [[module.mounts]]
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'
@@ -106,3 +122,6 @@ style = "github-dark"
     path = 'github.com/hugomods/icons/vendors/font-awesome'
 [security]
   allowContent = ['^text/html$', '^text/markdown$']
+  [security.exec]
+    # Newer Hugo versions no longer allow tailwindcss by default
+    allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^git$', '^node$', '^npx$', '^postcss$', '^tailwindcss$']

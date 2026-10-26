@@ -1,1 +1,4 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+<p>
+  © {{ now.Year }} {{ .Site.Title }} · {{ .Site.Params.author }}. All rights reserved.
+  {{ with site.GetPage "/legal" }}· <a href="{{ .RelPermalink }}" class="hover:underline no-underline">{{ .Title }}</a>{{ end }}
+</p>
