@@ -7,8 +7,8 @@ sitemap:
   disable: true
 ---
 
-Hey, I’m Mathias — a Swiss developer with 10+ years of experience across IT, automation, and emerging tech.  
-I’m based in Switzerland and bring that same Swiss mindset to my work: precision, reliability, and a focus on quality that lasts. Whether it’s smart contracts, backends, or AI tooling, I help teams turn ambitious ideas into robust, secure software.
+Hey, I’m Mathias — a developer based in Switzerland with 10+ years of experience across IT, automation, and emerging tech.  
+I bring a Swiss mindset to my work: precision, reliability, and quality that lasts. Whether it’s smart contracts, backends, or AI tooling, I help teams turn ambitious ideas into robust, secure software — and I think through the architecture, not just the code.
 
 ### 🛠️ What I Do
 **Custom Development**
@@ -38,9 +38,4 @@ Brought the Swiss Franc–backed stablecoin (ZCHF) to multiple chains with Chain
 Conducted a full security review of the initial ZCHF contract system, uncovering critical minting and challenge vulnerabilities — and worked with the team to address them.
 
 **RAG-based AI Chatbot @ TX Group**  
-Built an internal AI assistant that helps employees get instant answers from internal documentation using Retrieval-Augmented Generation and natural language processing.
-
-### 🤝 Let's Work Together
-If you're building something ambitious and need a sharp dev who can think through both the code and the architecture — we should talk.
-
-#### Ready to collaborate? [Get in Touch](/#contact)
+Built an internal AI assistant that helps employees get instant answers from internal documentation using Retrieval-Augmented Generation.

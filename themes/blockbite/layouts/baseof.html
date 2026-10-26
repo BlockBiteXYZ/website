@@ -5,7 +5,7 @@
       {{ block "title" . }}{{ if .IsHome }}{{ .Site.Params.HeadTitle | default .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}{{
       end }}
     </title>
-    {{ partialCached "meta-tags.html" . }} {{ partialCached "icons.html" . }} {{
+    {{ partial "meta-tags.html" . }} {{ partialCached "icons.html" . }} {{
     partialCached "css.html" . }} {{ partialCached "js.html" . }} {{ if
     .Params.canonicalUrl }}
     <link rel="canonical" href="{{ .Params.canonicalUrl }}" />

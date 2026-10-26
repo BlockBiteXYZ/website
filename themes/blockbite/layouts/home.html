@@ -1,25 +1,27 @@
 {{ define "content" }}
+{{- $email := "" -}}
+{{- range site.Params.social -}}
+  {{- if hasPrefix .url "mailto:" }}{{ $email = strings.TrimPrefix "mailto:" .url }}{{ end -}}
+{{- end -}}
 <div class="w-full">
   <section
-    class="font-bold text-4xl md:text-6xl lg:text-8xl [text-wrap:balance] flex flex-col justify-center items-center gap-8 min-h-[70svh]"
+    class="flex flex-col justify-center items-center gap-6 md:gap-8 min-h-[70svh] [text-wrap:balance]"
   >
-    <span
-      aria-hidden="true"
-      class="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] overflow-hidden"
-    >
-      <ul
-        class="block animate-text-slide-{{ len .Site.Params.punchLines }} text-center leading-tight [&_li]:block"
-      >
-        {{ range $k, $v := .Site.Params.punchLines }}
-        <li>{{ $v }}</li>
-        {{ end }}
-        <li>{{ index .Site.Params.punchLines 0 }}</li>
-      </ul>
-    </span>
+    {{ with .Site.Params.headline }}
+    <p class="pt-0 text-center font-bold leading-tight text-4xl md:text-6xl lg:text-8xl">{{ . }}</p>
+    {{ end }}
     {{ with .Site.Params.tagline }}
     <h1 class="max-w-3xl pt-0 text-center font-normal text-lg md:text-2xl text-neutral-600 dark:text-neutral-400">
       {{ . }}
     </h1>
+    {{ end }}
+    {{ with .Site.Params.facts }}
+    <ul class="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base text-neutral-500">
+      {{ range $i, $fact := . }}
+      {{ if $i }}<li aria-hidden="true" class="hidden sm:block">·</li>{{ end }}
+      <li>{{ $fact }}</li>
+      {{ end }}
+    </ul>
     {{ end }}
     <div class="flex flex-wrap justify-center gap-4 font-medium text-base md:text-xl">
       <a
@@ -49,8 +51,20 @@
       {{ with .Description }}<p class="pt-0 text-neutral-500 text-center text-base md:text-xl">{{ . }}</p>{{ end }}
     </header>
     {{ if eq $id "contact" }}
-    <section class="pt-10 text-center text-lg">{{ .Content }}</section>
-    <div class="pt-10">{{ partialCached "socials-full.html" . }}</div>
+    <section class="pt-10 text-center text-lg max-w-2xl mx-auto">{{ .Content }}</section>
+    {{ with $email }}
+    <div class="pt-8 flex flex-col items-center gap-3">
+      <a
+        href="mailto:{{ . }}"
+        data-umami-event="cta-contact-email"
+        class="no-underline px-8 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium text-lg md:text-2xl hover:opacity-80 transition-opacity"
+      >
+        {{ . }}
+      </a>
+      {{ with site.Params.replyTime }}<p class="pt-0 text-sm text-neutral-500">{{ . }}</p>{{ end }}
+    </div>
+    {{ end }}
+    <div class="pt-12">{{ partialCached "socials-full.html" . }}</div>
     {{ else }}
     <section class="pt-10">{{ .Content }}</section>
     {{ end }}

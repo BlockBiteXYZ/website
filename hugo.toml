@@ -21,8 +21,13 @@ style = "github-dark"
   since = 2023
 
   logo = "images/black_text_wide_transparent.png"
-  punchLines = ["You Ask, I Build", "Code That Works", "Fast. Clean. Done.", "No BS. Just Code."]
-  tagline = "Swiss freelance engineer for smart contracts, security reviews, TypeScript backends and applied AI."
+  # Share image for LinkedIn, X, Telegram etc. (1200x630)
+  images = ["images/og.png"]
+
+  headline = "Secure software. Swiss-made."
+  tagline = "Freelance engineer for smart contracts, security reviews, TypeScript backends and applied AI."
+  facts = ["10+ years shipping software", "Smart contract auditor", "Based in Switzerland"]
+  replyTime = "I usually reply within one business day."
 
   customCSS = ["css/custom.css"]
   umamiID = "0781cc07-8b16-4f2c-801f-05218dc2fa69"
@@ -45,11 +50,11 @@ style = "github-dark"
   url = "https://t.me/mathewmeconry/"
   text = "@mathewmeconry"
 [[params.social]]
-  name = "Twitter"
+  name = "X"
   vendor = "font-awesome-brands"
-  icon = "twitter"
+  icon = "x-twitter"
   weight = 3
-  url = "https://twitter.com/mathewmeconry/"
+  url = "https://x.com/mathewmeconry"
   text = "@mathewmeconry"
 [[params.social]]
   name = "LinkedIn"
