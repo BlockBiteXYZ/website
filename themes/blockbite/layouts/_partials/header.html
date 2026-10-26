@@ -10,6 +10,12 @@
     document.getElementById("slide-menu").classList.toggle("left-full")
     document.getElementById("slide-menu").classList.toggle("left-0")
   }
+
+  function updateHeader() {
+    document.getElementById("site-header").classList.toggle("scrolled", window.scrollY > 10);
+  }
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  window.addEventListener("DOMContentLoaded", updateHeader);
 </script>
 <nav class="grid grid-cols-3">
   <a
@@ -19,7 +25,7 @@
     <img
       class="dark:invert"
       src="{{ .Site.Params.logo | relURL }}"
-      alt="logo"
+      alt="{{ .Site.Title }}"
     />
   </a>
   {{ with site.Menus.main }}
@@ -31,49 +37,47 @@
       {{ .Name }}</a
     >
     / {{ end }}
-    <a class="cursor-pointer" onclick="toggleTheme()">
-      <p class="hidden dark:block">
+    <button type="button" class="cursor-pointer" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <span class="hidden dark:block">
         {{ $ctx := dict "vendor" "lucide" "name" "sun" }} {{ partial
         "icons/icon" $ctx }}
-      </p>
-      <p class="dark:hidden">
+      </span>
+      <span class="dark:hidden">
         {{ $ctx := dict "vendor" "lucide" "name" "moon" }} {{ partial
         "icons/icon" $ctx }}
-      </p>
-    </a>
+      </span>
+    </button>
   </div>
-  <div class="sm:hidden justify-self-end col-span-2" onclick="toggleMenu()">
-    {{ $ctx := dict "vendor" "lucide" "name" "menu" "size" "2em" "className"
-    "cursor-pointer" }} {{ partial "icons/icon" $ctx }}
-  </div>
+  <button type="button" class="sm:hidden justify-self-end col-span-2 cursor-pointer" onclick="toggleMenu()" aria-label="Open menu">
+    {{ $ctx := dict "vendor" "lucide" "name" "menu" "size" "2em" }} {{ partial "icons/icon" $ctx }}
+  </button>
   <div
     id="slide-menu"
     class="z-40 fixed top-0 left-full w-screen h-screen transition-[left] bg-white dark:bg-black p-10 grid grid-row content-start place-items-center gap-4 text-black dark:text-white"
   >
     <div class="w-full grid grid-flow-col">
-      <a class="cursor-pointer" onclick="toggleTheme()">
-        <p class="hidden dark:block">
+      <button type="button" class="cursor-pointer justify-self-start" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span class="hidden dark:block">
           {{ $ctx := dict "vendor" "lucide" "name" "sun" "size" "2em"}} {{
           partial "icons/icon" $ctx }}
-        </p>
-        <p class="dark:hidden">
+        </span>
+        <span class="dark:hidden">
           {{ $ctx := dict "vendor" "lucide" "name" "moon" "size" "2em"}} {{
           partial "icons/icon" $ctx }}
-        </p>
-      </a>
-      <a class="self-end" onclick="toggleMenu()">
-        {{ $ctx := dict "vendor" "lucide" "name" "x" "size" "2em" "className"
-        "cursor-pointer place-self-end" }} {{ partial "icons/icon" $ctx }}
-      </a>
+        </span>
+      </button>
+      <button type="button" class="cursor-pointer justify-self-end" onclick="toggleMenu()" aria-label="Close menu">
+        {{ $ctx := dict "vendor" "lucide" "name" "x" "size" "2em" }} {{ partial "icons/icon" $ctx }}
+      </button>
     </div>
     <h4 class="pt-0">
-      <a class="hover:underline no-underline cursor-pointer" href="{{ $.Site.BaseURL }}">
+      <a class="hover:underline no-underline cursor-pointer" href="{{ $.Site.BaseURL }}" onclick="toggleMenu()">
         Home</a
       >
     </h4>
     {{ range . }}
     <h4 class="pt-0">
-      <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}">
+      <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}" onclick="toggleMenu()">
         {{ .Name }}</a
       >
     </h4>

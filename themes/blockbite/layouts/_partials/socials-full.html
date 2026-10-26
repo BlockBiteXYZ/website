@@ -5,6 +5,7 @@
     <a
       href="{{ .url | safeURL }}"
       target="_blank"
+      data-umami-event="social-contact-{{ .name | urlize }}"
       aria-label="{{ .name }}"
       {{
       if

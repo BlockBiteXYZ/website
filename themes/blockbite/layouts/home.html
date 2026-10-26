@@ -1,19 +1,61 @@
 {{ define "content" }}
-<div
-  class="font-bold text-4xl md:text-6xl lg:text-8xl [text-wrap:balance] bg-clip-text flex flex-col grow justify-center items-center gap-8 min-h-full"
->
-  <span
-    class="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] overflow-hidden"
+<div class="w-full">
+  <section
+    class="font-bold text-4xl md:text-6xl lg:text-8xl [text-wrap:balance] flex flex-col justify-center items-center gap-8 min-h-[70svh]"
   >
-    <ul
-      class="block animate-text-slide-{{ len .Site.Params.punchLines }} text-center leading-tight [&_li]:block"
+    <span
+      aria-hidden="true"
+      class="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] lg:h-[calc(theme(fontSize.8xl)*theme(lineHeight.tight))] overflow-hidden"
     >
-      {{ range $k, $v := .Site.Params.punchLines }}
-      <li>{{ $v }}</li>
-      {{ end }}
-      <li aria-hidden="true">{{ index .Site.Params.punchLines 0 }}</li>
-    </ul>
-  </span>
-  {{ partialCached "socials-minimal.html" . }}
+      <ul
+        class="block animate-text-slide-{{ len .Site.Params.punchLines }} text-center leading-tight [&_li]:block"
+      >
+        {{ range $k, $v := .Site.Params.punchLines }}
+        <li>{{ $v }}</li>
+        {{ end }}
+        <li>{{ index .Site.Params.punchLines 0 }}</li>
+      </ul>
+    </span>
+    {{ with .Site.Params.tagline }}
+    <h1 class="max-w-3xl pt-0 text-center font-normal text-lg md:text-2xl text-neutral-600 dark:text-neutral-400">
+      {{ . }}
+    </h1>
+    {{ end }}
+    <div class="flex flex-wrap justify-center gap-4 font-medium text-base md:text-xl">
+      <a
+        href="#contact"
+        data-umami-event="cta-hero-contact"
+        class="no-underline px-6 py-3 rounded-full border border-current bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
+      >
+        Get in touch
+      </a>
+      <a
+        href="#services"
+        data-umami-event="cta-hero-services"
+        class="no-underline px-6 py-3 rounded-full border border-current hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+      >
+        See what I do
+      </a>
+    </div>
+    {{ partialCached "socials-minimal.html" . }}
+  </section>
+
+  {{ range slice "customers" "services" "about" "contact" }}
+  {{ $id := . }}
+  {{ with site.GetPage . }}
+  <article id="{{ $id }}" class="w-full scroll-mt-28 pt-24 md:pt-32">
+    <header class="w-full">
+      <h2 class="w-full pt-0 text-4xl font-normal text-center">{{ .Title }}</h2>
+      {{ with .Description }}<p class="pt-0 text-neutral-500 text-center text-base md:text-xl">{{ . }}</p>{{ end }}
+    </header>
+    {{ if eq $id "contact" }}
+    <section class="pt-10 text-center text-lg">{{ .Content }}</section>
+    <div class="pt-10">{{ partialCached "socials-full.html" . }}</div>
+    {{ else }}
+    <section class="pt-10">{{ .Content }}</section>
+    {{ end }}
+  </article>
+  {{ end }}
+  {{ end }}
 </div>
 {{ end }}
