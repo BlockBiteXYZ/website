@@ -42,7 +42,7 @@
     {{ partialCached "socials-minimal.html" . }}
   </section>
 
-  {{ range slice "customers" "services" "about" "contact" }}
+  {{ range slice "customers" "services" "process" "about" "contact" }}
   {{ $id := . }}
   {{ with site.GetPage . }}
   <article id="{{ $id }}" class="w-full scroll-mt-28 pt-24 md:pt-32">
@@ -65,6 +65,19 @@
     </div>
     {{ end }}
     <div class="pt-12">{{ partialCached "socials-full.html" . }}</div>
+    {{ else if eq $id "process" }}
+    <ol class="pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {{ range $i, $step := .Params.steps }}
+      <li class="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 p-6">
+        <div class="flex items-center gap-3 text-neutral-500">
+          {{ partial "icons/icon" (dict "vendor" "lucide" "name" $step.icon "size" "1.5em") }}
+          <span class="text-sm font-medium">Step {{ add $i 1 }}</span>
+        </div>
+        <h3 class="pt-4 text-xl">{{ $step.title }}</h3>
+        <p class="pt-2 text-neutral-600 dark:text-neutral-400">{{ $step.text }}</p>
+      </li>
+      {{ end }}
+    </ol>
     {{ else }}
     <section class="pt-10">{{ .Content }}</section>
     {{ end }}

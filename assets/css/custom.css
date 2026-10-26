@@ -28,6 +28,14 @@ html {
   opacity: 1;
 }
 
+/* Icons in content headings (see render-heading.html) */
+.heading-icon {
+  display: inline-block;
+  vertical-align: -0.125em;
+  margin-right: 0.5em;
+  opacity: 0.6;
+}
+
 /* Section spacing for content pages (replaces empty-heading spacers in Markdown) */
 article section > h3:not(:first-child),
 article section > h4 {

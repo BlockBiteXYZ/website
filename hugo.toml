@@ -103,6 +103,16 @@ style = "github-dark"
     source = 'assets'
     target = 'assets'
   [[module.mounts]]
+    source = 'static'
+    target = 'static'
+  # Self-hosted Inter (no requests to Google Fonts)
+  [[module.mounts]]
+    source = 'node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2'
+    target = 'static/fonts/inter/inter-latin-wght-normal.woff2'
+  [[module.mounts]]
+    source = 'node_modules/@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2'
+    target = 'static/fonts/inter/inter-latin-ext-wght-normal.woff2'
+  [[module.mounts]]
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'

@@ -33,7 +33,7 @@
     class="flex flex-row justify-evenly grow text-md sm:text-sm lg:text-xl place-items-center hidden sm:flex col-span-2"
   >
     {{ range . }}
-    <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}">
+    <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}" data-umami-event="nav-{{ .Name | urlize }}">
       {{ .Name }}</a
     >
     / {{ end }}
@@ -77,7 +77,7 @@
     </h4>
     {{ range . }}
     <h4 class="pt-0">
-      <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}" onclick="toggleMenu()">
+      <a class="hover:underline no-underline cursor-pointer" href="{{ .URL }}" onclick="toggleMenu()" data-umami-event="nav-{{ .Name | urlize }}">
         {{ .Name }}</a
       >
     </h4>

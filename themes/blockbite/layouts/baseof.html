@@ -12,6 +12,7 @@
     {{ else }}
     <link rel="canonical" href="{{ .Permalink }}" />
     {{ end }}
+    <link rel="preload" href="{{ "fonts/inter/inter-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
     {{ if .IsHome }}{{ partialCached "schema.html" . }}{{ end }}
   </head>
   <body

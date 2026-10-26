@@ -12,7 +12,8 @@ Hardstrasse 59
 5432 Neuenhof  
 Switzerland
 
-E-Mail: [mathias@blockbite.ch](mailto:mathias@blockbite.ch)
+E-Mail: [mathias@blockbite.ch](mailto:mathias@blockbite.ch)  
+VAT: CHE-426.551.456 MWST
 
 ### Privacy Policy
 This policy explains what personal data is processed when you visit this website, based on the Swiss Federal Act on Data Protection (FADP / revDSG).

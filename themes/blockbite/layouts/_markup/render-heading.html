@@ -1,3 +1,5 @@
+{{- /* Optional Lucide icon via a heading attribute: ### Title {icon="shield-check"} */ -}}
 <h{{ .Level }} id="{{ .Anchor | safeURL }}">
+  {{- with .Attributes.icon }}{{ partial "icons/icon" (dict "vendor" "lucide" "name" . "className" "heading-icon") }}{{ end }}
   {{ .Text | safeHTML }}
 </h{{ .Level }}>
