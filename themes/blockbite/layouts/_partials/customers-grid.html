@@ -1,0 +1,25 @@
+{{- /* Customer logo grid from data/customers.yaml. Logos are lazy-loaded so the hidden light/dark variant isn't downloaded. */ -}}
+{{- $lang := .Lang -}}
+{{- $sizes := dict "lg" "h-16 md:h-40" "md" "h-12 md:h-25" "sm" "h-10 md:h-20" -}}
+{{- $items := site.Data.customers -}}
+{{- $count := len $items -}}
+<div class="grid grid-flow-row grid-cols-2 lg:grid-cols-3">
+  {{- range $i, $c := $items }}
+  {{- $size := index $sizes ($c.size | default "lg") }}
+  {{- /* Center a lone logo in the last row of the two-column (mobile) grid */}}
+  {{- $lastOdd := and (eq (add $i 1) $count) (not (modBool $count 2)) }}
+  <div class="relative min-h-32 md:min-h-70 p-4 md:p-10 flex flex-col justify-center{{ if $lastOdd }} col-span-2 lg:col-span-1{{ end }}">
+    <a target="_blank" rel="noopener" href="{{ $c.url }}">
+      {{- if $c.logo.light }}
+      <img class="object-contain {{ $size }} m-auto block dark:hidden" alt="{{ $c.name }}" loading="lazy" decoding="async" src="{{ printf "images/customers/%s" $c.logo.light | relURL }}" />
+      <img class="object-contain {{ $size }} m-auto hidden dark:block" alt="{{ $c.name }}" loading="lazy" decoding="async" src="{{ printf "images/customers/%s" $c.logo.dark | relURL }}" />
+      {{- else }}
+      <img class="object-contain {{ $size }} m-auto{{ if $c.logo.invert }} invert dark:invert-0{{ end }}" alt="{{ $c.name }}" loading="lazy" decoding="async" src="{{ printf "images/customers/%s" $c.logo.src | relURL }}" />
+      {{- end }}
+    </a>
+    {{- with $c.caption }}{{ with index . $lang }}
+    <p class="md:absolute md:inset-x-0 md:bottom-6 px-2 pt-1 md:pt-0 text-center text-xs md:text-sm text-neutral-500">{{ . | markdownify }}</p>
+    {{- end }}{{ end }}
+  </div>
+  {{- end }}
+</div>

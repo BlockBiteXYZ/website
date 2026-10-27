@@ -1,4 +1,4 @@
 <p>
-  © {{ now.Year }} {{ .Site.Title }} · {{ .Site.Params.author }}. All rights reserved.
+  © {{ now.Year }} {{ .Site.Title }} · {{ .Site.Params.author }}. {{ i18n "allRightsReserved" }}
   {{ with site.GetPage "/legal" }}· <a href="{{ .RelPermalink }}" class="hover:underline no-underline">{{ .Title }}</a>{{ end }}
 </p>

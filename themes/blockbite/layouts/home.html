@@ -29,14 +29,14 @@
         data-umami-event="cta-hero-contact"
         class="no-underline px-6 py-3 rounded-full border border-current bg-black text-white dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
       >
-        Get in touch
+        {{ i18n "getInTouch" }}
       </a>
       <a
         href="#services"
         data-umami-event="cta-hero-services"
         class="no-underline px-6 py-3 rounded-full border border-current hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
       >
-        See what I do
+        {{ i18n "seeWhatIDo" }}
       </a>
     </div>
     {{ partialCached "socials-minimal.html" . }}
@@ -65,13 +65,15 @@
     </div>
     {{ end }}
     <div class="pt-12">{{ partialCached "socials-full.html" . }}</div>
+    {{ else if eq $id "customers" }}
+    <div class="pt-10">{{ partial "customers-grid.html" . }}</div>
     {{ else if eq $id "process" }}
     <ol class="pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {{ range $i, $step := .Params.steps }}
       <li class="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-black/40 p-6">
         <div class="flex items-center gap-3 text-neutral-500">
           {{ partial "icons/icon" (dict "vendor" "lucide" "name" $step.icon "size" "1.5em") }}
-          <span class="text-sm font-medium">Step {{ add $i 1 }}</span>
+          <span class="text-sm font-medium">{{ i18n "step" }} {{ add $i 1 }}</span>
         </div>
         <h3 class="pt-4 text-xl">{{ $step.title }}</h3>
         <p class="pt-2 text-neutral-600 dark:text-neutral-400">{{ $step.text }}</p>

@@ -1,9 +1,9 @@
 baseURL = 'https://www.blockbite.ch/'
-languageCode = 'en-us'
 title = 'BlockBite'
 theme = 'blockbite'
-languagecode = "en"
-defaultcontentlanguage = "en"
+# English lives at /, German at /de/
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
 
@@ -13,21 +13,12 @@ style = "github-dark"
 [params]
   author = "Mathias Scherer"
   info = "Solidity Dev, DevOps Engineer, Security Nerd"
-  HeadTitle = "BlockBite | Smart Contract & Security Engineer, Switzerland"
-  description = "Swiss freelance engineer for Solidity smart contracts, EVM security reviews, TypeScript backends and applied AI. Trusted by Aragon, Frankencoin and TX Group."
   keywords = "EVM, Freelance Solidity Developer, Typescript Development Services, Blockchain Smart Contracts, Security Audits for Blockchain, DevOps Engineer, Ethereum Blockchain Development, Backend Development Solutions, Custom Software Development, IT Freelancer, Web Application Security, Freelance IT Consultant, Solidity Smart Contracts, Typescript Backend Development, Blockchain Project Consulting, Cybersecurity Expertise, IT Solutions Provider, Freelance DevOps Specialist, Ethereum DApp Development, Code Quality Assurance"
   #gravatar = "john.doe@example.com"
 
   since = 2023
 
   logo = "images/black_text_wide_transparent.png"
-  # Share image for LinkedIn, X, Telegram etc. (1200x630)
-  images = ["images/og.png"]
-
-  headline = "Secure software. Swiss-made."
-  tagline = "Freelance engineer for smart contracts, security reviews, TypeScript backends and applied AI."
-  facts = ["10+ years shipping software", "Smart contract auditor", "Based in Switzerland"]
-  replyTime = "I usually reply within one business day."
 
   customCSS = ["css/custom.css"]
   umamiID = "0781cc07-8b16-4f2c-801f-05218dc2fa69"
@@ -71,23 +62,66 @@ style = "github-dark"
   url = "mailto:mathias@blockbite.ch"
   text = "mathias@blockbite.ch"
 
-# Menu links
-[[menus.main]]
-  name = "Customers & Partners"
+# Languages: per-language params override [params]; UI strings live in themes/blockbite/i18n/
+[languages.en]
+  languageCode = "en"
   weight = 1
-  url = "/#customers"
-[[menus.main]]
-  name = "Services"
+  [languages.en.params]
+    languageLabel = "English"
+    HeadTitle = "BlockBite | Smart Contract & Security Engineer, Switzerland"
+    description = "Swiss freelance engineer for Solidity smart contracts, EVM security reviews, TypeScript backends and applied AI. Trusted by Aragon, Frankencoin and TX Group."
+    # Share image for LinkedIn, X, Telegram etc. (1200x630)
+    images = ["images/og.png"]
+    headline = "Secure software. Swiss-made."
+    tagline = "Freelance engineer for smart contracts, security reviews, TypeScript backends and applied AI."
+    facts = ["10+ years shipping software", "Smart contract auditor", "Based in Switzerland"]
+    replyTime = "I usually reply within one business day."
+  [[languages.en.menus.main]]
+    name = "Customers & Partners"
+    weight = 1
+    url = "/#customers"
+  [[languages.en.menus.main]]
+    name = "Services"
+    weight = 2
+    url = "/#services"
+  [[languages.en.menus.main]]
+    name = "About Me"
+    weight = 3
+    url = "/#about"
+  [[languages.en.menus.main]]
+    name = "Get In Touch"
+    weight = 4
+    url = "/#contact"
+
+# German copy uses Swiss spelling (ss instead of ß) and the formal "Sie"
+[languages.de]
+  languageCode = "de-CH"
   weight = 2
-  url = "/#services"
-[[menus.main]]
-  name = "About Me"
-  weight = 3
-  url = "/#about"
-[[menus.main]]
-  name = "Get In Touch"
-  weight = 4
-  url = "/#contact"
+  [languages.de.params]
+    languageLabel = "Deutsch"
+    HeadTitle = "BlockBite | Smart-Contract-Entwicklung & Security-Audits, Schweiz"
+    description = "Freelance-Engineer aus der Schweiz für Solidity Smart Contracts, Security Audits, TypeScript-Backends und KI. Für Kunden wie Aragon, Frankencoin und TX Group."
+    images = ["images/og-de.png"]
+    headline = "Sichere Software. Swiss-made."
+    tagline = "Freelance-Engineer für Smart Contracts, Security Reviews, TypeScript-Backends und angewandte KI."
+    facts = ["10+ Jahre Software-Entwicklung", "Smart-Contract-Auditor", "Aus der Schweiz"]
+    replyTime = "Ich antworte in der Regel innert eines Arbeitstages."
+  [[languages.de.menus.main]]
+    name = "Kunden & Partner"
+    weight = 1
+    url = "/de/#customers"
+  [[languages.de.menus.main]]
+    name = "Leistungen"
+    weight = 2
+    url = "/de/#services"
+  [[languages.de.menus.main]]
+    name = "Über mich"
+    weight = 3
+    url = "/de/#about"
+  [[languages.de.menus.main]]
+    name = "Kontakt"
+    weight = 4
+    url = "/de/#contact"
 
 [build]
   [build.buildStats]

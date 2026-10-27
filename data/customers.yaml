@@ -1,0 +1,46 @@
+# Customer logos for the homepage grid (rendered by _partials/customers-grid.html).
+# logo: either `light` + `dark` variants, or a single `src` (optionally `invert: true`
+#       for white logos that need to be inverted in light mode). Files live in static/images/customers/.
+# size: lg (default), md or sm.
+# caption: optional, per language; Markdown links are allowed.
+- name: Aragon
+  url: https://www.aragon.org/
+  logo: { light: aragon-blue.svg, dark: aragon.svg }
+  caption:
+    en: PoC for the [Staged Proposal Processor](https://github.com/aragon/staged-proposal-processor-plugin) plugin
+    de: PoC für das [Staged Proposal Processor](https://github.com/aragon/staged-proposal-processor-plugin)-Plugin
+- name: Aragon Foundation
+  url: https://www.aragonfoundation.org/
+  logo: { src: aragon_foundation.svg, invert: true }
+  caption:
+    en: Technical advisor
+    de: Technischer Berater
+- name: Aktionariat
+  url: https://www.aktionariat.com
+  logo: { src: aktionariat-logo-white.svg, invert: true }
+  caption:
+    en: Smart contract security
+    de: Smart-Contract-Security
+- name: DFX
+  url: https://dfx.swiss
+  logo: { light: DFX-Logo-black.svg, dark: DFX-Logo-white.svg }
+  size: sm
+- name: Frankencoin
+  url: https://frankencoin.com/
+  logo: { light: frankencoin_logo_black.svg, dark: frankencoin_logo_white.svg }
+  caption:
+    en: CCIP integration & contract audit
+    de: CCIP-Integration & Contract-Audit
+- name: OneBalance
+  url: https://www.onebalance.io/
+  logo: { src: onebalance.svg }
+  caption:
+    en: Technical advisor for their Solana implementation
+    de: Technischer Berater für die Solana-Implementierung
+- name: TX Group
+  url: https://tx.group
+  logo: { src: Logo_tx_group.png }
+  size: md
+  caption:
+    en: Internal RAG-based AI assistant
+    de: Interner KI-Assistent (RAG)
