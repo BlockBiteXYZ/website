@@ -1,0 +1,24 @@
+{{- /* Dropdown showing the current language; the menu lists all translations of this page. Styles in custom.css */ -}}
+{{- $current := .Lang -}}
+<details class="lang-switch">
+  <summary aria-label="{{ .Site.Params.languageLabel }}">
+    {{ partial "icons/icon" (dict "vendor" "lucide" "name" "globe" "size" "1em") }}
+    <span>{{ upper .Lang }}</span>
+    <span class="chevron">{{ partial "icons/icon" (dict "vendor" "lucide" "name" "chevron-down" "size" "0.8em") }}</span>
+  </summary>
+  <ul class="lang-switch-menu">
+    {{- range .AllTranslations }}
+    <li>
+      <a
+        href="{{ .RelPermalink }}"
+        hreflang="{{ .Lang }}"
+        lang="{{ .Lang }}"
+        {{ if eq .Lang $current }}aria-current="true"{{ else }}data-umami-event="lang-{{ .Lang }}"{{ end }}
+      >
+        {{ .Site.Params.languageLabel }}
+        {{ if eq .Lang $current }}{{ partial "icons/icon" (dict "vendor" "lucide" "name" "check" "size" "1em") }}{{ end }}
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+</details>

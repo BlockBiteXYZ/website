@@ -12,8 +12,15 @@
     {{ else }}
     <link rel="canonical" href="{{ .Permalink }}" />
     {{ end }}
+    {{ if .IsTranslated }}
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+    {{ end }}
+    {{/* AllTranslations is sorted by language weight, so the first entry is English */}}
+    {{ with index .AllTranslations 0 }}<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />{{ end }}
+    {{ end }}
     <link rel="preload" href="{{ "fonts/inter/inter-latin-wght-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
-    {{ if .IsHome }}{{ partialCached "schema.html" . }}{{ end }}
+    {{ if .IsHome }}{{ partialCached "schema.html" . .Lang }}{{ end }}
   </head>
   <body
     class="{{ if eq .Kind "home" -}} hero-background {{ end -}} bg-white dark:bg-black self-center min-h-svh flex flex-col max-w-7xl mx-auto px-5 lg:pl-20 lg:pr-20 pb-5 text-black dark:text-white"
